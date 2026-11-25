@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Are You AI Ready?</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>AI & Healthcare</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#references">References</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="challenge-intro">
+
+            <h1>Are You AI Ready?</h1>
+
+            <p>
+                Discover how much you know about artificial
+                intelligence, healthcare, and Rwanda's digital future.
+            </p>
+
+            <p>10 Questions | 3–5 Minutes | Instant Feedback</p>
+
+            <button class="challenge-button" onclick="startChallenge()">
+                Start the Challenge
+            </button>
+
+        </section>
+
+        <section id="challenge-area" style="display: none;">
+
+            <p id="question-counter">Question 1 of 10</p>
+
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <h2 id="question-text"></h2>
+
+            <div id="answer-options"></div>
+
+            <p id="answer-feedback"></p>
+
+            <button id="next-button" onclick="nextQuestion()" style="display: none;">
+                Next Question
+            </button>
+
+        </section>
+
+        <section id="challenge-results" style="display: none;">
+
+            <h1>Challenge Completed!</h1>
+
+            <h2 id="final-score"></h2>
+
+            <p id="result-message"></p>
+
+            <button class="challenge-button" onclick="startChallenge()">
+                Try Again
+            </button>
+
+            <a href="index.html" class="challenge-button">
+                Return to Homepage
+            </a>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

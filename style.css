@@ -1,0 +1,655 @@
+/* General website styling */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0b1728;
+    color: #eaf2f8;
+    line-height: 1.7;
+}
+
+/* Header and navigation */
+header {
+    background-color: #14283e;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+header h2 {
+    color: #48d1a5;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #48d1a5;
+}
+
+/* Main content */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 25px;
+}
+
+section {
+    background-color: #14283e;
+    padding: 45px;
+    border-radius: 16px;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 38px;
+    line-height: 1.3;
+    margin-top: 0;
+}
+
+p {
+    font-size: 17px;
+    color: #d1dfeb;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+    }
+
+    main {
+        padding: 30px 15px;
+    }
+
+    section {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+main section {
+    margin-bottom: 35px;
+}
+
+section h2 {
+    color: #48d1a5;
+    font-size: 30px;
+}
+
+section h3 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-top: 30px;
+}
+
+section ul {
+    padding-left: 25px;
+    color: #d1dfeb;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+section li {
+    margin-bottom: 10px;
+}
+
+/* Source links */
+section a {
+    color: #48d1a5;
+}
+
+section a:hover {
+    color: #ffffff;
+}
+#backToTop {
+    position: fixed;
+    display: none;
+    bottom: 25px;
+    right: 25px;
+    padding: 12px 18px;
+    background-color: #48d1a5;
+    color: #0b1728;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+#backToTop:hover {
+    background-color: #ffffff;
+}
+#ai-ready {
+    text-align: center;
+    border: 1px solid #48d1a5;
+    padding: 50px 25px;
+}
+
+#ai-ready h2 {
+    font-size: 38px;
+    color: #48d1a5;
+}
+
+#ai-ready .challenge-button {
+    display: inline-block;
+    background-color: #48d1a5;
+    color: #0b1728;
+    padding: 15px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    transition: 0.3s;
+}
+
+#ai-ready .challenge-button:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+#result-message {
+    font-size: 20px;
+}
+
+/* Mobile Devices */
+
+@media (max-width: 600px) {
+    #challenge-intro h1 {
+        font-size: 32px;
+    }
+
+    .answer-button {
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    #final-score {
+        font-size: 48px;
+    }
+}
+.answer-button {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    margin: 15px 0;
+    background-color: #0b1728;
+    color: white;
+    border: 2px solid #38516b;
+    border-radius: 10px;
+    font-size: 17px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.answer-button:hover:not(:disabled) {
+    border-color: #48d1a5;
+    transform: scale(1.02);
+}
+
+.answer-button:disabled {
+    opacity: 1;
+    cursor: default;
+}
+
+/* Correct Answer */
+
+.answer-button.correct {
+    background-color: #166534;
+    border-color: #4ade80;
+    color: white;
+    animation: answerPop 0.4s ease;
+}
+
+/* Incorrect Answer */
+
+.answer-button.incorrect {
+    background-color: #991b1b;
+    border-color: #f87171;
+    color: white;
+    animation: answerPop 0.4s ease;
+}
+
+/* Pop-up Animation */
+
+@keyframes answerPop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Next Question Button */
+
+#next-button {
+    background-color: #48d1a5;
+    color: #0b1728;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+footer {
+    background-color: #14283e;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 2px solid #48d1a5;
+}
+
+footer h2 {
+    color: #48d1a5;
+    font-size: 26px;
+}
+
+footer p {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+footer a {
+    color: #48d1a5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: white;
+}
+/* Interactive Challenge Page */
+
+#challenge-intro,
+#challenge-results {
+    text-align: center;
+    padding: 60px 30px;
+}
+
+#challenge-intro h1,
+#challenge-results h1 {
+    color: #48d1a5;
+    font-size: 42px;
+}
+
+#challenge-area {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+#question-counter {
+    color: #48d1a5;
+    font-weight: bold;
+}
+
+/* Progress Bar */
+
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: #0b1728;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #48d1a5;
+    transition: width 0.4s;
+}
+
+/* Challenge Buttons */
+
+.challenge-button {
+    display: inline-block;
+    background-color: #48d1a5;
+    color: #0b1728;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+section a.challenge-button {
+    color: #0b1728;
+}
+
+.challenge-button:hover {
+    background-color: white;
+    color: #0b1728;
+}
+
+/* Final Score */
+
+#final-score {
+    font-size: 65px;
+    color: #48d1a5;
+}
+/* Website Images */
+
+.section-image {
+    display: block;
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin: 25px auto;
+}
+/* Rwanda Health Atlas */
+
+.map-statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.stat-card {
+    background-color: #0b1728;
+    border: 1px solid #38516b;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.stat-card h2 {
+    color: #48d1a5;
+    font-size: 40px;
+    margin: 0;
+}
+
+.stat-card p {
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+#rwandaMap {
+    height: 600px;
+    width: 100%;
+    border: 2px solid #48d1a5;
+    border-radius: 12px;
+    background-color: #e5e7dc;
+    margin: 30px 0;
+}
+
+.leaflet-popup-content {
+    font-family: Arial, sans-serif;
+    color: #14283e;
+}
+
+.leaflet-popup-content p {
+    color: #14283e;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+
+    .map-statistics {
+        grid-template-columns: 1fr;
+    }
+
+    #rwandaMap {
+        height: 450px;
+    }
+
+}
+.leaflet-tooltip.district-label {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: #26382e;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0;
+    text-shadow: none;
+}
+
+.leaflet-tooltip.district-label::before {
+    display: none;
+}
+/* Neighbouring Countries */
+
+.country-label {
+    color: #536052;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    white-space: nowrap;
+}
+/* Lake Labels */
+
+.leaflet-tooltip.lake-label {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: #247ba0;
+    font-size: 11px;
+    font-style: italic;
+    padding: 0;
+}
+
+.leaflet-tooltip.lake-label::before {
+    display: none;
+}
+/* Hospital Map Markers */
+
+.hospital-marker div {
+    width: 18px;
+    height: 18px;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.hospital-marker:hover {
+    z-index: 1000 !important;
+}
+
+.leaflet-popup-content h3 {
+    color: #16856b;
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+/* Hospital Search and Filters */
+
+.map-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.map-controls input,
+.map-controls select {
+    flex: 1;
+    min-width: 180px;
+    padding: 14px;
+    background-color: #0b1728;
+    color: white;
+    border: 1px solid #48d1a5;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+#hospitalCount {
+    color: #48d1a5;
+    font-size: 14px;
+}
+/* Map Legend */
+
+.map-legend {
+    background-color: #0b1728;
+    padding: 25px;
+    border: 1px solid #38516b;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.map-legend h3 {
+    color: #48d1a5;
+    margin-top: 0;
+}
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.legend-grid div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.legend-grid span {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 22px;
+    font-weight: bold;
+}
+/* Rwanda Health Atlas Invitation */
+
+.atlas-preview {
+    background-color: #0b1728;
+    border: 1px solid #48d1a5;
+    border-radius: 15px;
+    padding: 35px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.atlas-preview h2 {
+    color: #48d1a5;
+    margin-top: 0;
+}
+
+.atlas-preview p {
+    font-size: 16px;
+}
+.atlas-preview {
+    text-align: center;
+    border: 1px solid #48d1a5;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+.atlas-preview h2 {
+    color: #48d1a5;
+    font-size: 32px;
+}
+/* Global Medical Symbol Watermark */
+
+body::before {
+    content: "\2695\FE0E";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 500px;
+    color: #48d1a5;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@media (max-width: 600px) {
+    body::before {
+        font-size: 280px;
+    }
+}
+/* Benefits and Challenges Cards */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.info-card {
+    background-color: #0b1728;
+    padding: 25px;
+    border: 1px solid #38516b;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: #48d1a5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.info-card h3 {
+    color: #48d1a5;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.info-card p {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+#challenges .info-card h3 {
+    color: #e8b54d;
+}
+
+#challenges .info-card:hover {
+    border-color: #e8b54d;
+}
+
+@media (max-width: 600px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}

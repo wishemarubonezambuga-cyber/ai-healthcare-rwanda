@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rwanda Health Atlas | AI & Healthcare</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+</head>
+
+<body>
+
+<header>
+    <h2>AI & Healthcare</h2>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="healthcare-map.html">Rwanda Health Atlas</a>
+        <a href="index.html#references">References</a>
+        <a href="ai-ready.html">Are You AI Ready?</a>
+        <a href="healthcare-map.html">Rwanda Health Atlas</a>
+    </nav>
+</header>
+
+<main>
+
+<section id="healthcare-map">
+
+   <h1>Rwanda Health Atlas</h1>
+
+<p>
+    Mapping Rwanda's healthcare network across
+    all 30 administrative districts.
+</p>
+
+    <div class="map-statistics">
+
+        <div class="stat-card">
+            <h2>30</h2>
+            <p>Districts</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>57</h2>
+            <p>Listed Public Hospitals</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>5</h2>
+            <p>Administrative Regions</p>
+        </div>
+
+    </div>
+
+<div class="map-controls">
+
+    <input type="text" id="hospitalSearch"
+           placeholder="Search for a hospital..."
+           oninput="filterHospitals()">
+
+    <select id="districtFilter"
+            onchange="filterHospitals()">
+        <option value="">All Districts</option>
+<div class="atlas-preview">
+
+    <h2>Explore Rwanda Health Atlas</h2>
+
+    <p>Discover Rwanda's healthcare network through an interactive map featuring 30 districts and 57 hospital locations.</p>
+
+    <p>Explore hospital locations, classifications and geographical distribution across the country.</p>
+
+    <a href="healthcare-map.html" class="challenge-button">
+        Explore the Atlas &rarr;
+    </a>
+
+</div>
+    </select>
+
+
+    <select id="typeFilter"
+            onchange="filterHospitals()">
+        <option value="">All Hospital Types</option>
+    </select>
+
+</div>
+
+<p id="hospitalCount">Showing 57 hospitals</p>    
+<div id="rwandaMap"></div>
+<div class="map-legend">
+
+    <h3>Map Legend</h3>
+
+    <div class="legend-grid">
+
+        <div><span style="background:#16856b">+</span> District Hospital</div>
+
+        <div><span style="background:#2563eb">+</span> Level II Teaching Hospital</div>
+
+        <div><span style="background:#7c3aed">+</span> National Teaching Hospital</div>
+
+        <div><span style="background:#db2777">+</span> Specialized Hospital</div>
+
+        <div><span style="background:#ea580c">+</span> Provincial Hospital</div>
+
+        <div><span style="background:#dc2626">+</span> Referral Hospital</div>
+
+    </div>
+
+</div>
+
+    <h3>About the Map</h3>
+
+    <p>
+        This map is designed to help visitors understand
+        the geographical distribution of public hospitals
+        in Rwanda.
+    </p>
+
+    <h3>Data Sources and References</h3>
+
+    <ul>
+        <li>
+            <a href="https://www.moh.gov.rw/affiliates-teaching-hospitals/hospitals" target="_blank">
+                Rwanda Ministry of Health - Public Hospitals
+            </a>
+        </li>
+
+        <li>
+            <a href="https://gis.rbc.gov.rw/server/rest/services/Public_Health_Facilities_Mapping1_MIL1/MapServer/0" target="_blank">
+                Rwanda Biomedical Centre - Hospital GIS Data
+            </a>
+        </li>
+
+        <li>
+            <a href="https://geodata.rw/server/rest/services/basemap/District_Boundary/MapServer" target="_blank">
+                Rwanda National Geodata - District Boundaries
+            </a>
+        </li>
+
+        <li>
+            <a href="https://leafletjs.com/" target="_blank">
+                Leaflet - Interactive Mapping Library
+            </a>
+        </li>
+<li>
+    <a href="https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-lakes/" target="_blank">
+        Natural Earth - Lakes and Reservoirs Dataset
+    </a>
+</li>
+
+    </ul>
+
+    <a href="index.html" class="challenge-button">
+        Return to Homepage
+    </a>
+
+</section>
+
+</main>
+
+<footer>
+    <h2>AI & Healthcare</h2>
+    <p>Exploring Global Trends and Rwanda's Digital Future</p>
+    <p>Research and Website Development</p>
+    <p>Newness.O &amp; Walter.I</p>
+    <p>Columbia College | Computer Science Project | 2026</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="rwanda-districts.js"></script>
+<script src="rwanda-hospitals.js"></script>
+<script src="hospitals.js"></script>
+</body>
+</html>
